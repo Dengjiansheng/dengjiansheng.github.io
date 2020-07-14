@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Vue.js学习 - 我的全新 Hugo 网站</title><meta name="Description" content=""><meta property="og:title" content="Vue.js学习" />
+<meta property="og:description" content="前端学习也有一段时间了，虽然知道自己html&#43;css&#43;js并没有完全吃透，但是总不能一直呆在原地，而且自己也想多学点新的东西，前端工程师应该" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/2016/09/25/vue-js%E5%AD%A6%E4%B9%A0/" />
+<meta property="article:published_time" content="2016-09-25T20:28:45+00:00" />
+<meta property="article:modified_time" content="2016-09-25T20:28:45+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vue.js学习"/>
+<meta name="twitter:description" content="前端学习也有一段时间了，虽然知道自己html&#43;css&#43;js并没有完全吃透，但是总不能一直呆在原地，而且自己也想多学点新的东西，前端工程师应该"/>
+<meta name="application-name" content="我的全新 Hugo 网站">
+<meta name="apple-mobile-web-app-title" content="我的全新 Hugo 网站"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/2016/09/25/vue-js%E5%AD%A6%E4%B9%A0/" /><link rel="prev" href="http://example.org/posts/2016/07/12/node-js%E5%AE%89%E8%A3%85/" /><link rel="next" href="http://example.org/posts/2016/11/02/pc%E5%85%BC%E5%AE%B9%E9%81%AE%E7%BD%A9%E5%B1%82/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Vue.js学习",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/2016\/09\/25\/vue-js%E5%AD%A6%E4%B9%A0\/"
+        },"genre": "posts","wordcount":  1533 ,
+        "url": "http:\/\/example.org\/posts\/2016\/09\/25\/vue-js%E5%AD%A6%E4%B9%A0\/","datePublished": "2016-09-25T20:28:45+00:00","dateModified": "2016-09-25T20:28:45+00:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="我的全新 Hugo 网站">我的全新 Hugo 网站</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="我的全新 Hugo 网站">我的全新 Hugo 网站</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Vue.js学习</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2016-09-25">2016-09-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1533 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本实例">基本实例</a>
+      <ul>
+        <li><a href="#1hello-vuejs">1、Hello Vue.js</a></li>
+        <li><a href="#2two-way双向-binding">2、Two-way(双向) Binding</a></li>
+        <li><a href="#3render-a-list">3、Render a List</a></li>
+        <li><a href="#4handle-user-input">4、Handle User Input</a></li>
+        <li><a href="#5all-together-now">5、All Together Now</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-binding-syntax数据绑定语法">Data Binding Syntax（数据绑定语法）</a>
+      <ul>
+        <li><a href="#1text">1、Text</a></li>
+        <li><a href="#2raw-html">2、Raw Html</a></li>
+        <li><a href="#3attributes">3、Attributes</a></li>
+        <li><a href="#4javascript-expressions">4、JavaScript Expressions</a></li>
+        <li><a href="#5filters-这个还不是很清楚留着后面看看实际的代码效果">5、Filters 这个还不是很清楚=。=留着后面看看实际的代码效果</a></li>
+        <li><a href="#6directives">6、Directives</a></li>
+      </ul>
+    </li>
+    <li><a href="#computed-properties">Computed Properties</a>
+      <ul>
+        <li><a href="#1basic-example">1、Basic Example</a></li>
+        <li><a href="#2computed-property-vs-watch">2、Computed Property vs. $watch</a></li>
+        <li><a href="#3computed-setter">3、Computed Setter</a></li>
+      </ul>
+    </li>
+    <li><a href="#class-and-style-bindings">Class and Style Bindings</a>
+      <ul>
+        <li><a href="#1binding-html-class">1、Binding HTML Class</a></li>
+        <li><a href="#2binding-inline-style">2、Binding Inline Style</a></li>
+      </ul>
+    </li>
+    <li><a href="#conditional-rendering">Conditional Rendering</a>
+      <ul>
+        <li><a href="#1v-if">1、v-if</a></li>
+        <li><a href="#2template-v-if">2、Template v-if</a></li>
+        <li><a href="#3v-show">3、v-show</a></li>
+        <li><a href="#4v-else">4、v-else</a></li>
+        <li><a href="#5component-caveat">5、Component caveat</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>　　前端学习也有一段时间了，虽然知道自己<code>html+css+js</code>并没有完全吃透，但是总不能一直呆在原地，而且自己也想多学点新的东西，前端工程师应该学习的东西真的好多。最先看到的是<code>react</code>，之后在知呼看到有人提到了<code>Vue</code>，了解了下感觉尤大的<code>Vue</code>的学习曲线更低一些，也更加轻巧，毕竟我现在的公司对这些都没有任何兴趣=。=，工作中除了上面的三个工具，自己会使用node上面的一些工具来协助开发，真的没啥需要，总不能固步自封是吧。所以先把尤大的<code>Vue</code>先学习清楚了再说。</p>
+<blockquote>
+<p>这个学习是根据 <a href="vue.js/org/guide/" rel=""><code>Vue</code></a>官方文档来进行的</p>
+<p>可以下载Chrome<code>Vue.js devtools</code>插件，让我们直接观察到渲染后的数据</p>
+</blockquote>
+<hr>
+<h2 id="基本实例">基本实例</h2>
+<h3 id="1hello-vuejs">1、Hello Vue.js</h3>
+<p>这是最基本的实例了吧</p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    {{message}}
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',
+    data:{
+        message:'Hello Vue.js!'
+    }
+})
+&lt;/script&gt;
+</code></pre><h3 id="2two-way双向-binding">2、Two-way(双向) Binding</h3>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;p&gt;{{message}}&lt;/p&gt;
+    &lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',
+    data:{
+        message:'Hello Vue.js!'
+    }
+})
+&lt;/script&gt;
+</code></pre><h3 id="3render-a-list">3、Render a List</h3>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;ul&gt;
+        &lt;li v-for=&quot;item in items&quot;&gt;
+            {{item.text}}
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        items:[
+        {text:'One'},
+        {text:'Two'},
+        {text:'Three'}
+        ]
+    }
+})
+&lt;/script&gt;
+</code></pre><h3 id="4handle-user-input">4、Handle User Input</h3>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;p&gt;{{message}}&lt;/p&gt;
+    &lt;button v-on:click=&quot;reverseMessage&quot;&gt;Reverse Message&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        message:'Hello Vue.js'
+    },
+    methods:{
+        reverseMessage:function(){
+            this.message=this.message.split('').reverse().join('');
+        }
+    }
+})
+&lt;/script&gt;
+</code></pre><h3 id="5all-together-now">5、All Together Now</h3>
+<p>实现填写确定添加，点击X删除</p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;input type=&quot;text&quot; v-model=&quot;newItem&quot; v-on:keyup.enter=&quot;addItem&quot;&gt;
+    &lt;ul&gt;
+        &lt;li v-for=&quot;item in items&quot;&gt;
+            &lt;span&gt;{{item.text}}&lt;/span&gt;
+            &lt;button v-on:click=&quot;removeItem&quot;&gt;X&lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        newItem:'',     //虽然开始的时候没有用到，但是需要提前在data中体现
+        items:[
+            {text:'one'}
+        ]
+    },
+    methods:{
+        addItem:function(){
+            var text=this.newItem.trim();
+            if (text) {
+                this.items.push({text:text});
+                this.newItem='';    //clear model-newItem
+            }
+        },
+        removeItem:function(index){
+            this.items.splice(index,1);
+        }
+    }
+})
+&lt;/script&gt;
+</code></pre><h2 id="data-binding-syntax数据绑定语法">Data Binding Syntax（数据绑定语法）</h2>
+<h3 id="1text">1、Text</h3>
+<pre><code>&lt;span&gt;Message:{{message}}&lt;/span&gt;
+// 如果只想执行一次数据插入
+&lt;span&gt;This message will never change:{{* message}}&lt;/span&gt;
+</code></pre><h3 id="2raw-html">2、Raw Html</h3>
+<pre><code>&lt;div&gt;{{{raw_html}}}&lt;/div&gt;   //并不建议使用，可能会被恶意使用
+</code></pre><h3 id="3attributes">3、Attributes</h3>
+<pre><code>&lt;div id=&quot;item-{{id}}&quot;&gt;&lt;/div&gt;
+</code></pre><h3 id="4javascript-expressions">4、JavaScript Expressions</h3>
+<p>类似此类的“内联js”只能有一行</p>
+<pre><code>{{number+1}}
+{{ok?'yes':'no'}}
+{{message.split('').reverse().join('')}}
+</code></pre><h3 id="5filters-这个还不是很清楚留着后面看看实际的代码效果">5、Filters <em>这个还不是很清楚=。=留着后面看看实际的代码效果</em></h3>
+<pre><code>{{ message | capitalize }}
+{{ message | filterA 'arg1' arg2 }}
+</code></pre><h3 id="6directives">6、Directives</h3>
+<p><code>v-</code>开头，最常用的是<code>v-if</code>、<code>v-on</code>、<code>v-bind</code>，其中<code>v-bind</code>以及<code>v-on</code>都有缩写，分别是<code>:</code>和<code>@</code></p>
+<pre><code>&lt;a v-bind:href=&quot;url&quot;&gt;&lt;/a&gt;
+&lt;a v-on:click=&quot;doSomething&quot;&gt;
+&lt;p v-if=&quot;greeting&quot;&gt;Hello!&lt;/p&gt;
+</code></pre><h2 id="computed-properties">Computed Properties</h2>
+<h3 id="1basic-example">1、Basic Example</h3>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    a={{a}},b={{b}}
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        a:1
+    },
+    computed:{
+        b:function(){
+            return this.a+1;
+        }
+    }
+})
+&lt;/script&gt;
+</code></pre><p>当改变<code>vm.a</code>，则<code>vm.b</code>也将进行变更</p>
+<h3 id="2computed-property-vs-watch">2、Computed Property vs. $watch</h3>
+<p><code>$watch</code>监控数据的变动，然后执行<code>callback</code></p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    {{fullName}}
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        firstName:'Foo',
+        lastName:'Bar',
+        fullName:'Foo Bar'
+    },
+})
+vm.$watch('firstName',function(val){
+    this.fullName=val+' '+this.lastName;
+});
+vm.$watch('lastName',function(val){
+    this.fullName=this.firstName+' '+val;
+});
+&lt;/script&gt;
+</code></pre><h3 id="3computed-setter">3、Computed Setter</h3>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;p&gt;{{firstName}}+{{lastName}}&lt;/p&gt;
+    {{fullName}}
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        firstName:'Foo',
+        lastName:'Bar',
+        fullName:'Foo Bar'
+    },
+    computed:{
+        fullName:{
+            // 最开始默认使用的是getter
+            get:function(){
+                return this.firstName+' '+this.lastName;
+            },
+            // 这个是setter
+            set:function(newValue){
+                var names=newValue.split(' ');
+                this.firstName=names[0];
+                this.lastName=names[names.length-1];
+            }
+        }
+    }
+})
+&lt;/script&gt;
+</code></pre><h2 id="class-and-style-bindings">Class and Style Bindings</h2>
+<h3 id="1binding-html-class">1、Binding HTML Class</h3>
+<p>虽然我们可以使用<code>class=&quot;{{className}}&quot;</code>来设置<code>class</code>，但是官方文档中提醒我们不要<code>v-bind:class=&quot;&quot;</code>混用</p>
+<h4 id="object-syntax">Object Syntax</h4>
+<p>有好几种用法</p>
+<pre><code>// #1
+&lt;div id=&quot;app&quot; v-bind:class=&quot;{'class-a':isA,'class-b':isB}&quot;&gt;something&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        isA:true,
+        isB:false
+    }
+})
+&lt;/script&gt;
+
+// #2
+&lt;div id=&quot;app&quot; v-bind:class=&quot;classObject&quot;&gt;something&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        classObject:{
+            'class-a':true,
+            'class-b':false
+        }
+    }
+})
+&lt;/script&gt;
+&lt;/body&gt;
+</code></pre><h4 id="array-syntax">Array Syntax</h4>
+<p>绑定一系列的<code>classes</code></p>
+<pre><code>&lt;div id=&quot;app&quot; v-bind:class=&quot;[classA,classB]&quot;&gt;something&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        classA:'class-a',
+        classB:'class-b'
+    }
+})
+&lt;/script&gt;
+
+//
+&lt;div id=&quot;app&quot; v-bind:class=&quot;[classA,isB?classB:'']&quot;&gt;something&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        classA:'class-a',
+        classB:'class-b',
+        isB:true
+    }
+})
+&lt;/script&gt;
+
+//
+&lt;div id=&quot;app&quot; v-bind:class=&quot;[classA,{'class-b':isB,'class-c':isC}]&quot;&gt;something&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        classA:'class-a',
+        isB:true,
+        isC:true
+    }
+})
+&lt;/script&gt;
+</code></pre><h3 id="2binding-inline-style">2、Binding Inline Style</h3>
+<h4 id="object-syntax-1">Object Syntax</h4>
+<p><code>v-bind:style</code>看起来像<code>CSS</code>，但实际上是一个<code>JS Object</code></p>
+<pre><code>&lt;div id=&quot;app&quot; v-bind:style=&quot;{color:activeColor,fontSize:fontSize+'px'}&quot;&gt;something&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        activeColor:'red',
+        fontSize:'14'
+    }
+})
+&lt;/script&gt;
+
+//  看起来更加清爽的一种写法
+&lt;div id=&quot;app&quot; v-bind:style=&quot;styleObject&quot;&gt;something&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        styleObject:{
+            color:'red',
+            fontSize:'14px'
+        }
+    }
+})
+&lt;/script&gt;
+</code></pre><h4 id="array-syntax-1">Array Syntax</h4>
+<pre><code>&lt;div id=&quot;app&quot; v-bind:style=&quot;[styleObjectA,styleObjectB]&quot;&gt;something&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        styleObjectA:{
+            color:'red',
+            fontSize:'14px'
+        },
+        styleObjectB:{
+            margin:'20px',
+            padding:'40px'
+        },
+    }
+})
+&lt;/script&gt;
+</code></pre><h4 id="auto-prefixing">Auto-prefixing</h4>
+<p>嗯，这个我试了下=。=，不知为啥没有作用，下次去issues上面看看</p>
+<h2 id="conditional-rendering">Conditional Rendering</h2>
+<h3 id="1v-if">1、v-if</h3>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;p v-if=&quot;ok&quot;&gt;Yes&lt;/p&gt;
+    &lt;p v-else&gt;No&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        ok:true
+    }
+})
+&lt;/script&gt;
+</code></pre><h3 id="2template-v-if">2、Template v-if</h3>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;template v-if=&quot;ok&quot;&gt;
+        &lt;h1&gt;YES&lt;/h1&gt;
+        &lt;p&gt;Show Yes&lt;/p&gt;
+    &lt;/template&gt;
+    &lt;template v-else&gt;
+        &lt;h1&gt;NO&lt;/h1&gt;
+        &lt;p&gt;Show No&lt;/p&gt;
+    &lt;/template&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        ok:true
+    }
+})
+&lt;/script&gt;
+</code></pre><h3 id="3v-show">3、v-show</h3>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;p v-show=&quot;ok&quot;&gt;Yes&lt;/p&gt;
+    &lt;p v-else&gt;No&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        ok:true
+    }
+})
+&lt;/script&gt;
+</code></pre><p><code>v-show</code>是没有<code>&lt;template&gt;</code>语法的</p>
+<h3 id="4v-else">4、v-else</h3>
+<p>必须跟在<code>v-if</code>或<code>v-show</code>的后面</p>
+<h3 id="5component-caveat">5、Component caveat</h3>
+<p><code>v-else</code>在使用了<code>v-show</code>的components后面使用是不会起作用的，可以使用另一种<code>v-show</code>的方式来代替，例如：</p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;custom-component v-show=&quot;ok&quot;&gt;&lt;/custom-component&gt;
+    &lt;p v-else&gt;This could be a component too.&lt;/p&gt;
+&lt;/div&gt;
+//  intended with
+&lt;div id=&quot;app&quot;&gt;
+    &lt;custom-component v-show=&quot;ok&quot;&gt;&lt;/custom-component&gt;
+    &lt;p v-show=&quot;!ok&quot;&gt;This could be a component too.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm=new Vue({
+    el:'#app',  
+    data:{
+        ok:true
+    }
+})
+&lt;/script&gt;
+</code></pre></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2016-09-25</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/2016/07/12/node-js%E5%AE%89%E8%A3%85/" class="prev" rel="prev" title="Node.js安装"><i class="fas fa-angle-left fa-fw"></i>Node.js安装</a>
+            <a href="/posts/2016/11/02/pc%E5%85%BC%E5%AE%B9%E9%81%AE%E7%BD%A9%E5%B1%82/" class="next" rel="next" title="PC兼容遮罩层">PC兼容遮罩层<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.64.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
