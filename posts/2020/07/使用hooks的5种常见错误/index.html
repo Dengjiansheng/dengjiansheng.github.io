@@ -6,14 +6,14 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>使用hooks的5种常见错误 - 我的全新 Hugo 网站</title><meta name="Description" content=""><meta property="og:title" content="使用hooks的5种常见错误" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Five common mistakes writing react components (with hooks) in 2020 阅读笔记 1 在没有渲染需要的时候使用useState 这是一种useState被滥用的情况 function ClickButton(props) { // count被定义，但是并没" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/posts/2020/07/%E4%BD%BF%E7%94%A8hooks%E7%9A%845%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/" />
 <meta property="article:published_time" content="2020-07-14T13:51:30+08:00" />
 <meta property="article:modified_time" content="2020-07-14T13:51:30+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用hooks的5种常见错误"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Five common mistakes writing react components (with hooks) in 2020 阅读笔记 1 在没有渲染需要的时候使用useState 这是一种useState被滥用的情况 function ClickButton(props) { // count被定义，但是并没"/>
 <meta name="application-name" content="我的全新 Hugo 网站">
 <meta name="apple-mobile-web-app-title" content="我的全新 Hugo 网站"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -26,12 +26,12 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/posts\/2020\/07\/%E4%BD%BF%E7%94%A8hooks%E7%9A%845%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF\/"
-        },"genre": "posts","wordcount":  0 ,
+        },"genre": "posts","keywords": "javascript, react, hooks","wordcount":  1280 ,
         "url": "http:\/\/example.org\/posts\/2020\/07\/%E4%BD%BF%E7%94%A8hooks%E7%9A%845%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF\/","datePublished": "2020-07-14T13:51:30+08:00","dateModified": "2020-07-14T13:51:30+08:00","publisher": {
             "@type": "Organization",
-            "name": "作者"},"author": {
+            "name": "肥肥的黄小蛋"},"author": {
                 "@type": "Person",
-                "name": "作者"
+                "name": "肥肥的黄小蛋"
             },"description": ""
     }
     </script></head>
@@ -75,16 +75,257 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">使用hooks的5种常见错误</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-14">2020-07-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 0 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 0 分钟&nbsp;</div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>肥肥的黄小蛋</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-14">2020-07-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1280 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"></div><div class="post-footer" id="post-footer">
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-在没有渲染需要的时候使用usestate">1 在没有渲染需要的时候使用useState</a>
+      <ul>
+        <li><a href="#问题-">问题 ⚡</a></li>
+        <li><a href="#解决方法-">解决方法 ✅</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-使用routerpush代替超链接">2 使用router.push代替超链接</a>
+      <ul>
+        <li><a href="#问题--1">问题 ⚡</a></li>
+        <li><a href="#解决方法--1">解决方法 ✅</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-通过useeffect来触发一些action动作">3 通过useEffect来触发一些action动作</a>
+      <ul>
+        <li><a href="#问题--2">问题 ⚡</a></li>
+        <li><a href="#解决方法--2">解决方法 ✅</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-单一职责组件">4 单一职责组件</a>
+      <ul>
+        <li></li>
+        <li><a href="#解决方法--3">解决方法 ✅</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-单一职责的useeffect">5 单一职责的useEffect</a>
+      <ul>
+        <li></li>
+        <li><a href="#解决方法--4">解决方法 ✅</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p><a href="https://www.lorenzweiss.de/common_mistakes_react_hooks/" target="_blank" rel="noopener noreffer">Five common mistakes writing react components (with hooks) in 2020</a> 阅读笔记</p>
+</blockquote>
+<h2 id="1-在没有渲染需要的时候使用usestate">1 在没有渲染需要的时候使用<code>useState</code></h2>
+<p>这是一种<code>useState</code>被滥用的情况</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">ClickButton</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// count被定义，但是并没有在return中被渲染
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">onClickCount</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setCount</span><span class="p">(</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">onClickRequest</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">apiCall</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onClickCount</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Counter</span><span class="o">&lt;</span><span class="err">/</span><span class="err">b</span><span class="err">u</span><span class="err">t</span><span class="err">t</span><span class="err">o</span><span class="err">n</span><span class="err">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onClickRequest</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Submit</span><span class="o">&lt;</span><span class="err">/</span><span class="err">b</span><span class="err">u</span><span class="err">t</span><span class="err">t</span><span class="err">o</span><span class="err">n</span><span class="err">&gt;</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="问题-">问题 ⚡</h3>
+<p>每一次修改<code>state</code>都将强制渲染组件及其子组件，而上面例子中的<code>count</code>并没有参与到渲染中，因此每次修改<code>count</code>的值都将导致不必要的渲染，可能会影响性能或产生意料之外的副作用</p>
+<h3 id="解决方法-">解决方法 ✅</h3>
+<p>使用<code>useRef</code>代替<code>useState</code>来保存你想保存的值</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">ClickButton</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">onClickCount</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">count</span><span class="p">.</span><span class="nx">current</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">onClickRequest</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">apiCall</span><span class="p">(</span><span class="nx">count</span><span class="p">.</span><span class="nx">current</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onClickCount</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Counter</span><span class="o">&lt;</span><span class="err">/</span><span class="err">b</span><span class="err">u</span><span class="err">t</span><span class="err">t</span><span class="err">o</span><span class="err">n</span><span class="err">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onClickRequest</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Submit</span><span class="o">&lt;</span><span class="err">/</span><span class="err">b</span><span class="err">u</span><span class="err">t</span><span class="err">t</span><span class="err">o</span><span class="err">n</span><span class="err">&gt;</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="2-使用routerpush代替超链接">2 使用<code>router.push</code>代替超链接</h2>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">ClickButton</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">history</span> <span class="o">=</span> <span class="nx">useHistory</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">onClick</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">history</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&#34;/next-page&#34;</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onClick</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Go</span> <span class="nx">to</span> <span class="nx">next</span> <span class="nx">page</span><span class="o">&lt;</span><span class="err">/</span><span class="err">b</span><span class="err">u</span><span class="err">t</span><span class="err">t</span><span class="err">o</span><span class="err">n</span><span class="err">&gt;</span><span class="err">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="问题--1">问题 ⚡</h3>
+<p>这里主要的问题是针对屏幕阅读器而言，也就是对视障人士来说，使用 js 事件来代替超链接是一件非常不友好的事情，因为屏幕阅读器无法识别这个<code>button</code>点击后是一个超链接的效果，作者原文如下：</p>
+<blockquote>
+<p>Even though this would work just fine for most of the users, there is a huge problem when it comes to accessibility here. The button will not be marked as linking to another page at all, which makes it nearly impossible to be identified by screen readers. Also could you open that in a new tab or window? Most likely not.</p>
+</blockquote>
+<h3 id="解决方法--1">解决方法 ✅</h3>
+<p>使用<code>&lt;Link&gt;</code>组件或者<code>&lt;a&gt;</code>标签来替代</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">ClickButton</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">to</span><span class="o">=</span><span class="s2">&#34;/next-page&#34;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">Go</span> <span class="nx">to</span> <span class="nx">next</span> <span class="nx">page</span><span class="o">&lt;</span><span class="err">/</span><span class="err">s</span><span class="err">p</span><span class="err">a</span><span class="err">n</span><span class="err">&gt;</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">L</span><span class="err">i</span><span class="err">n</span><span class="err">k</span><span class="err">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="3-通过useeffect来触发一些action动作">3 通过<code>useEffect</code>来触发一些<code>action</code>动作</h2>
+<p>看到这个例子的时候，我感觉发现了新世界，真不敢相信有人会用这种方式来写这种逻辑</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">DataList</span><span class="p">(</span><span class="p">{</span> <span class="nx">onSuccess</span> <span class="p">}</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">loading</span><span class="p">,</span> <span class="nx">setLoading</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">error</span><span class="p">,</span> <span class="nx">setError</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">setData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">fetchData</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="p">;</span>
+    <span class="nx">callApi</span><span class="p">(</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">setData</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="p">)</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">setError</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="p">)</span>
+      <span class="p">.</span><span class="k">finally</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">setLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">;</span>
+
+  <span class="nx">useEffect</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">fetchData</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">,</span> <span class="p">[</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="nx">useEffect</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">loading</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">onSuccess</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span><span class="p">,</span> <span class="p">[</span><span class="nx">loading</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">onSuccess</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Data</span><span class="o">:</span> <span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span><span class="err">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="问题--2">问题 ⚡</h3>
+<p>这样做的话，我们就让<code>fetchData</code>和<code>onSuccess</code>这两个方法失去了直接联系，或者说我们不知道这两个方法的直接关系，无法保证<code>onSuccess</code>只会在<code>fetchData</code>成功后执行</p>
+<h3 id="解决方法--2">解决方法 ✅</h3>
+<p>将<code>onSuccess</code>与<code>fetchData</code>直接关联起来</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">DataList</span><span class="p">(</span><span class="p">{</span> <span class="nx">onSuccess</span> <span class="p">}</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">loading</span><span class="p">,</span> <span class="nx">setLoading</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">err</span><span class="p">,</span> <span class="nx">setError</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">setData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">fetchData</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="p">;</span>
+    <span class="nx">callApi</span><span class="p">(</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="p">(</span><span class="nx">fetchedData</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setData</span><span class="p">(</span><span class="nx">fetchedData</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">onSuccess</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+      <span class="p">}</span><span class="p">)</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">setError</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="p">)</span>
+      <span class="p">.</span><span class="k">finally</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">setLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">;</span>
+
+  <span class="nx">useEffect</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">fetchData</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">,</span> <span class="p">[</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span><span class="err">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="4-单一职责组件">4 单一职责组件</h2>
+<p>组件的拆分是很难的一件事情，主观性挺高的</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Header</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">header</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">HeaderInner</span> <span class="nx">menuItems</span><span class="o">=</span><span class="p">{</span><span class="nx">menuItems</span><span class="p">}</span> <span class="o">/</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">h</span><span class="err">e</span><span class="err">a</span><span class="err">d</span><span class="err">e</span><span class="err">r</span><span class="err">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">HeaderInner</span><span class="p">(</span><span class="p">{</span> <span class="nx">menuItems</span> <span class="p">}</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">isMobile</span><span class="p">(</span><span class="p">)</span> <span class="o">?</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">BurgerButton</span> <span class="nx">menuItems</span><span class="o">=</span><span class="p">{</span><span class="nx">menuItems</span><span class="p">}</span> <span class="o">/</span><span class="o">&gt;</span>
+  <span class="p">)</span> <span class="o">:</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Tabs</span> <span class="nx">tabData</span><span class="o">=</span><span class="p">{</span><span class="nx">menuItems</span><span class="p">}</span> <span class="o">/</span><span class="o">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="问题--3">问题 ⚡</h4>
+<p><code>HeaderInner</code>这个组件将产生两种情况，这不利于了解这个组件是做啥的，到底要输出啥，这也使得在其他地方测试或重用该组件变得更加困难</p>
+<h3 id="解决方法--3">解决方法 ✅</h3>
+<p>将判断的条件提升到<code>Header</code>组件</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Header</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">header</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">isMobile</span><span class="p">(</span><span class="p">)</span> <span class="o">?</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">BurgerButton</span> <span class="nx">menuItems</span><span class="o">=</span><span class="p">{</span><span class="nx">menuItems</span><span class="p">}</span> <span class="o">/</span><span class="o">&gt;</span>
+      <span class="p">)</span> <span class="o">:</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">Tabs</span> <span class="nx">tabData</span><span class="o">=</span><span class="p">{</span><span class="nx">menuItems</span><span class="p">}</span> <span class="o">/</span><span class="o">&gt;</span>
+      <span class="p">)</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">h</span><span class="err">e</span><span class="err">a</span><span class="err">d</span><span class="err">e</span><span class="err">r</span><span class="err">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="5-单一职责的useeffect">5 单一职责的<code>useEffect</code></h2>
+<p>在<code>class</code>写法中，我们有多个用于不同生命周期的钩子；而在<code>hooks</code>写法中，我们都集中到了<code>useEffect</code>这个<code>hooks</code>中</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Example</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">location</span> <span class="o">=</span> <span class="nx">useLocation</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">fetchData</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/*  Calling the api */</span>
+  <span class="p">}</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">updateBreadcrumbs</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/* Updating the breadcrumbs*/</span>
+  <span class="p">}</span><span class="p">;</span>
+
+  <span class="nx">useEffect</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">fetchData</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="nx">updateBreadcrumbs</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">,</span> <span class="p">[</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">BreadCrumbs</span> <span class="o">/</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="问题--4">问题 ⚡</h4>
+<p>当<code>location.pathname</code>变化时，将导致<code>fetchData</code>和<code>updateBreadcrumbs</code>都被调用，而实际我们只想调用<code>updateBreadcrumbs</code></p>
+<h3 id="解决方法--4">解决方法 ✅</h3>
+<p>使用多个<code>useEffect</code>将它们区分开</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Example</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">location</span> <span class="o">=</span> <span class="nx">useLocation</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">updateBreadcrumbs</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/* Updating the breadcrumbs*/</span>
+  <span class="p">}</span><span class="p">;</span>
+
+  <span class="nx">useEffect</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">updateBreadcrumbs</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">,</span> <span class="p">[</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">fetchData</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/*  Calling the api */</span>
+  <span class="p">}</span><span class="p">;</span>
+
+  <span class="nx">useEffect</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">fetchData</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">,</span> <span class="p">[</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">BreadCrumbs</span> <span class="o">/</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -101,7 +342,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/javascript/">javascript</a>,&nbsp;<a href="/tags/react/">react</a>,&nbsp;<a href="/tags/hooks/">hooks</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
@@ -112,7 +353,7 @@
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.64.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">肥肥的黄小蛋</a></span></div>
         </div>
     </footer></div>
 
