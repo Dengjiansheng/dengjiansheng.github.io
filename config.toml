@@ -10,7 +10,10 @@ title = "我的全新 Hugo 网站"
 
 # 更改使用 Hugo 构建网站时使用的默认主题
 theme = "LoveIt"
-
+[author]
+  name = "肥肥的黄小蛋"
+  email = ""
+  link = ""
 [params]
   # LoveIt 主题版本
   version = "0.2.X"
