@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>javascript - 标签 - 我的全新 Hugo 网站</title>
+        <link>http://dengjiansheng.github.io/tags/javascript/</link>
+        <description>javascript - 标签 - 我的全新 Hugo 网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 14 Jul 2020 13:51:30 &#43;0800</lastBuildDate><atom:link href="http://dengjiansheng.github.io/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+    <title>使用hooks的5种常见错误</title>
+    <link>http://dengjiansheng.github.io/posts/2020/07/%E4%BD%BF%E7%94%A8hooks%E7%9A%845%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/</link>
+    <pubDate>Tue, 14 Jul 2020 13:51:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://dengjiansheng.github.io/posts/2020/07/%E4%BD%BF%E7%94%A8hooks%E7%9A%845%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/</guid>
+    <description><![CDATA[Five common mistakes writing react components (with hooks) in 2020 阅读笔记 1 在没有渲染需要的时候使用useState 这是一种useState被滥用的情况 function ClickButton(props) { // count被定义，但是并没]]></description>
+</item></channel>
+</rss>

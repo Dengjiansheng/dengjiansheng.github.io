@@ -1,0 +1,63 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - 我的全新 Hugo 网站</title>
+        <link>http://dengjiansheng.github.io/posts/</link>
+        <description>所有文章 | 我的全新 Hugo 网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 14 Jul 2020 13:51:30 &#43;0800</lastBuildDate><atom:link href="http://dengjiansheng.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>使用hooks的5种常见错误</title>
+    <link>http://dengjiansheng.github.io/posts/2020/07/%E4%BD%BF%E7%94%A8hooks%E7%9A%845%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/</link>
+    <pubDate>Tue, 14 Jul 2020 13:51:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://dengjiansheng.github.io/posts/2020/07/%E4%BD%BF%E7%94%A8hooks%E7%9A%845%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/</guid>
+    <description><![CDATA[Five common mistakes writing react components (with hooks) in 2020 阅读笔记 1 在没有渲染需要的时候使用useState 这是一种useState被滥用的情况 function ClickButton(props) { // count被定义，但是并没]]></description>
+</item><item>
+    <title>PC兼容遮罩层</title>
+    <link>http://dengjiansheng.github.io/posts/2016/11/02/pc%E5%85%BC%E5%AE%B9%E9%81%AE%E7%BD%A9%E5%B1%82/</link>
+    <pubDate>Wed, 02 Nov 2016 11:24:21 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://dengjiansheng.github.io/posts/2016/11/02/pc%E5%85%BC%E5%AE%B9%E9%81%AE%E7%BD%A9%E5%B1%82/</guid>
+    <description><![CDATA[刚进公司时，做PC端的页面，涉及到一个遮罩，刚开始没有考虑到兼容，直接写了 /* css */ .pop{ position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); } /* html */ &lt;div class=&quot;pop&quot;&gt; /* Some Content */ &lt;/div&gt; 发现ie7/ie8无法正]]></description>
+</item><item>
+    <title>Vue.js学习</title>
+    <link>http://dengjiansheng.github.io/posts/2016/09/25/vue-js%E5%AD%A6%E4%B9%A0/</link>
+    <pubDate>Sun, 25 Sep 2016 20:28:45 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://dengjiansheng.github.io/posts/2016/09/25/vue-js%E5%AD%A6%E4%B9%A0/</guid>
+    <description><![CDATA[前端学习也有一段时间了，虽然知道自己html+css+js并没有完全吃透，但是总不能一直呆在原地，而且自己也想多学点新的东西，前端工程师应该]]></description>
+</item><item>
+    <title>Node.js安装</title>
+    <link>http://dengjiansheng.github.io/posts/2016/07/12/node-js%E5%AE%89%E8%A3%85/</link>
+    <pubDate>Tue, 12 Jul 2016 22:57:12 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://dengjiansheng.github.io/posts/2016/07/12/node-js%E5%AE%89%E8%A3%85/</guid>
+    <description><![CDATA[Windows懒人安装 安装Windows-nvm，安装前确保电脑里面没有安装其他Node版本，不然有可能会有一些奇怪的问题 直接通过nvm install 4]]></description>
+</item><item>
+    <title>Next主题配置记录</title>
+    <link>http://dengjiansheng.github.io/posts/2016/06/15/next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Wed, 15 Jun 2016 23:21:10 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://dengjiansheng.github.io/posts/2016/06/15/next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[设置RSS 对我好像没啥用=-= 添加「标签」页面 新建「标签」页面，并在菜单中显示「标签」链接，「标签」页面将展示站点的所有标签，如果所有文章都]]></description>
+</item><item>
+    <title>Next主题使用记录</title>
+    <link>http://dengjiansheng.github.io/posts/2016/06/15/next%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Wed, 15 Jun 2016 16:42:08 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://dengjiansheng.github.io/posts/2016/06/15/next%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[安装NexT 下载主题 启用主题 验证是否正确启用 然后duang，好了 主题设定 选择「Scheme」 主题配置文件_config.yml的Scheme]]></description>
+</item><item>
+    <title>Hexo使用记录2-基本操作</title>
+    <link>http://dengjiansheng.github.io/posts/2016/06/15/hexo%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%952-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
+    <pubDate>Wed, 15 Jun 2016 15:41:51 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://dengjiansheng.github.io/posts/2016/06/15/hexo%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%952-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
+    <description><![CDATA[基本操作(算是自己的进阶篇=-=) Front-matter Front-matter 是文件最上方以 &mdash; 分隔的区域，用于指定个别文件的变量——hexo.io title: Hexo使用记录2-基本操作 date: 2016-06-15]]></description>
+</item><item>
+    <title>Hexo使用记录1-开始使用</title>
+    <link>http://dengjiansheng.github.io/posts/2016/06/15/hexo%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%951-%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8/</link>
+    <pubDate>Wed, 15 Jun 2016 11:28:52 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://dengjiansheng.github.io/posts/2016/06/15/hexo%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%951-%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8/</guid>
+    <description><![CDATA[官方首页这样描述Hexo的：快速、简洁且高效的博客框架。 本文基于hexo官方文档以及其他网络文章及自己的使用感受 从接触前端开始，就久闻Git]]></description>
+</item></channel>
+</rss>

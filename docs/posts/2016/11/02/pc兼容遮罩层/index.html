@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>PC兼容遮罩层 - 我的全新 Hugo 网站</title><meta name="Description" content=""><meta property="og:title" content="PC兼容遮罩层" />
+<meta property="og:description" content="刚进公司时，做PC端的页面，涉及到一个遮罩，刚开始没有考虑到兼容，直接写了 /* css */ .pop{ position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); } /* html */ &lt;div class=&quot;pop&quot;&gt; /* Some Content */ &lt;/div&gt; 发现ie7/ie8无法正" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://dengjiansheng.github.io/posts/2016/11/02/pc%E5%85%BC%E5%AE%B9%E9%81%AE%E7%BD%A9%E5%B1%82/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-11-02T11:24:21+00:00" />
+<meta property="article:modified_time" content="2016-11-02T11:24:21+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PC兼容遮罩层"/>
+<meta name="twitter:description" content="刚进公司时，做PC端的页面，涉及到一个遮罩，刚开始没有考虑到兼容，直接写了 /* css */ .pop{ position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); } /* html */ &lt;div class=&quot;pop&quot;&gt; /* Some Content */ &lt;/div&gt; 发现ie7/ie8无法正"/>
+<meta name="application-name" content="我的全新 Hugo 网站">
+<meta name="apple-mobile-web-app-title" content="我的全新 Hugo 网站"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://dengjiansheng.github.io/posts/2016/11/02/pc%E5%85%BC%E5%AE%B9%E9%81%AE%E7%BD%A9%E5%B1%82/" /><link rel="prev" href="http://dengjiansheng.github.io/posts/2016/09/25/vue-js%E5%AD%A6%E4%B9%A0/" /><link rel="next" href="http://dengjiansheng.github.io/posts/2020/07/%E4%BD%BF%E7%94%A8hooks%E7%9A%845%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "PC兼容遮罩层",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/dengjiansheng.github.io\/posts\/2016\/11\/02\/pc%E5%85%BC%E5%AE%B9%E9%81%AE%E7%BD%A9%E5%B1%82\/"
+        },"genre": "posts","wordcount":  288 ,
+        "url": "http:\/\/dengjiansheng.github.io\/posts\/2016\/11\/02\/pc%E5%85%BC%E5%AE%B9%E9%81%AE%E7%BD%A9%E5%B1%82\/","datePublished": "2016-11-02T11:24:21+00:00","dateModified": "2016-11-02T11:24:21+00:00","publisher": {
+            "@type": "Organization",
+            "name": "肥肥的黄小蛋"},"author": {
+                "@type": "Person",
+                "name": "肥肥的黄小蛋"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="我的全新 Hugo 网站">我的全新 Hugo 网站</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="我的全新 Hugo 网站">我的全新 Hugo 网站</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">PC兼容遮罩层</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>肥肥的黄小蛋</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2016-11-02">2016-11-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 288 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>刚进公司时，做PC端的页面，涉及到一个遮罩，刚开始没有考虑到兼容，直接写了</p>
+<pre tabindex="0"><code>/* css */
+.pop{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+}
+
+/* html */
+&lt;div class=&quot;pop&quot;&gt;
+    /* Some Content */
+&lt;/div&gt;
+</code></pre><p>发现ie7/ie8无法正确识别<code>rgba()</code>，之后看原先的<code>css</code>中有，是</p>
+<pre tabindex="0"><code>/* css */
+.pop{
+    position:fixed;
+    top:0;left:0;
+    width:100%;
+    height:100%;
+    background:url(shade.png);
+}
+
+/* html */
+&lt;div class=&quot;pop&quot;&gt;
+    /* Some Content */
+&lt;/div&gt;
+</code></pre><p>里面的<code>shade.png</code>是一张半透明的图片，这样的话可以兼容ie7/ie8，几个月后，想是否能够直接通过<code>css</code>直接解决，而不用加入图片，想到ie7/ie8下透明度可以使用<code>filter:alpha(opacity=40)</code>来处理，于是写了个新的</p>
+<pre tabindex="0"><code>/* css */
+.pop{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.pop .shade{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity:.4;
+    filter:alpha(opacity=40);
+}
+
+/* html */
+&lt;div class=&quot;pop&quot;&gt;
+    &lt;div class=&quot;shade&quot;&gt;&lt;/div&gt;
+    /* Some Content */
+&lt;/div&gt;
+</code></pre><p>经测试，在ie7-ie8都能够正常显示遮罩层</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2016-11-02</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/2016/09/25/vue-js%E5%AD%A6%E4%B9%A0/" class="prev" rel="prev" title="Vue.js学习"><i class="fas fa-angle-left fa-fw"></i>Vue.js学习</a>
+            <a href="/posts/2020/07/%E4%BD%BF%E7%94%A8hooks%E7%9A%845%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/" class="next" rel="next" title="使用hooks的5种常见错误">使用hooks的5种常见错误<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">肥肥的黄小蛋</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
